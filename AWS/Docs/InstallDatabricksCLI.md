@@ -7,7 +7,7 @@
 ssh -i "AshokWindows.pem" ec2-user@ec2-54-227-71-93.compute-1.amazonaws.com
 ```
 
-<img src="../Screenshots/DatabricksCLI/1SSHEC2.png">
+<img src="../Screenshots/Databricks/CLI/1SSHEC2.png">
 
 ## Update OS packages
 
@@ -15,7 +15,7 @@ ssh -i "AshokWindows.pem" ec2-user@ec2-54-227-71-93.compute-1.amazonaws.com
 sudo yum update -y
 ```
 
-<img src="../Screenshots/DatabricksCLI/2UpdatePackages.png">
+<img src="../Screenshots/Databricks/CLI/2UpdatePackages.png">
 
 ## Check `curl` version (Install if not exists) 
 
@@ -23,7 +23,7 @@ sudo yum update -y
 curl -V
 ```
 
-<img src="../Screenshots/DatabricksCLI/3CurlVersion.png">
+<img src="../Screenshots/Databricks/CLI/3CurlVersion.png">
 
 ## Download Databricks CLI installation script and install
 
@@ -31,7 +31,7 @@ curl -V
 curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sudo sh
 ```
 
-<img src="../Screenshots/DatabricksCLI/4InstallDatabricksCLI.png">
+<img src="../Screenshots/Databricks/CLI/4InstallDatabricksCLI.png">
 
 ## Check the installed Databricks CLI Version
 
@@ -43,31 +43,31 @@ databricks -v
 databricks version
 ```
 
-<img src="../Screenshots/DatabricksCLI/5DatabricksVersion.png">
+<img src="../Screenshots/Databricks/CLI/5DatabricksVersion.png">
 
 ## Goto the `User Settings` section under the user profile in the Databricks Workspace
 
-<img src="../Screenshots/DatabricksCLI/6DatabricksWorkspaceDetails.png">
+<img src="../Screenshots/Databricks/CLI/6DatabricksWorkspaceDetails.png">
 
 ## Goto the `Developer` settings and click on `Manage` to create `Access tokens`
 
-<img src="../Screenshots/DatabricksCLI/7DatabricksAccessToken.png">
+<img src="../Screenshots/Databricks/CLI/7DatabricksAccessToken.png">
 
 ## Click on `Generate new token` to create a new Databricks Personal Access Token
 
-<img src="../Screenshots/DatabricksCLI/8DatabricksAccessTokenGenerate.png">
+<img src="../Screenshots/Databricks/CLI/8DatabricksAccessTokenGenerate.png">
 
 ## Add a `Comment` and `Lifetime (days)` to Generate new token and click on `Generate` 
 
-<img src="../Screenshots/DatabricksCLI/8DatabricksAccessTokenGenerate2.png">
+<img src="../Screenshots/Databricks/CLI/8DatabricksAccessTokenGenerate2.png">
 
 ## `Copy` the newly generated Databricks personal Access Token and click on `Done`
 
-<img src="../Screenshots/DatabricksCLI/9DatabricksAccessTokenCopy.png">
+<img src="../Screenshots/Databricks/CLI/9DatabricksAccessTokenCopy.png">
 
 ## Goto the Databricks Workspace and get the Workspace URL
 
-<img src="../Screenshots/DatabricksCLI/10DatabricksWorkspaceURL.png">
+<img src="../Screenshots/Databricks/CLI/10DatabricksWorkspaceURL.png">
 
 ## Goto the Terminal and execute the Databricks configure command
 
@@ -81,7 +81,7 @@ databricks configure
 
 * Enter the Databricks Personal Access Token, for example: `dapic910338f068fa3eb2e9d01ecdc8336ee`
 
-<img src="../Screenshots/DatabricksCLI/11DatabricksConfigure.png">
+<img src="../Screenshots/Databricks/CLI/11DatabricksConfigure.png">
 
 ## Execute Databricks CLI Commands to verify
 
@@ -89,4 +89,4 @@ databricks configure
 databricks clusters list
 ```
 
-<img src="../Screenshots/DatabricksCLI/12DatabricksClustersList.png">
+<img src="../Screenshots/Databricks/CLI/12DatabricksClustersList.png">
