@@ -4,7 +4,7 @@
 
 <img src="../Screenshots/Databricks/Compute/1DatabricksWorkspaceLogin.png">
 
-#### Click on Compute option in the left side menu from the workspace home page
+#### Click on Compute option on the left side menu from the workspace home page
 
 <img src="../Screenshots/Databricks/Compute/2CreateComputeOption.png">
 
