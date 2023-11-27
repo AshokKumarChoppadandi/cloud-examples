@@ -31,3 +31,7 @@ https://github.com/AshokKumarChoppadandi/cloud-examples/blob/main/AWS/Docs/Datab
 ### Scheduling Databricks workflows from Apache Airflow
 
 https://github.com/AshokKumarChoppadandi/cloud-examples/blob/main/AWS/Docs/SchedulingDatabricksWorkflowFromAirflow.md
+
+### Databricks CLI Commands
+
+https://github.com/AshokKumarChoppadandi/cloud-examples/blob/main/AWS/Docs/DatabricksCLICommands.md

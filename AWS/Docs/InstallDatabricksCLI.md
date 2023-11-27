@@ -33,6 +33,12 @@ curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.s
 
 <img src="../Screenshots/Databricks/CLI/4InstallDatabricksCLI.png">
 
+## Install via pip
+
+```
+pip install --upgrade databricks-cli
+```
+
 ## Check the installed Databricks CLI Version
 
 ```
