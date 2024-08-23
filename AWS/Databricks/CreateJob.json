@@ -1,0 +1,15 @@
+{
+  "name": "test-job-from-cli",
+  "existing_cluster_id": "1121-060527-brp5m77e",
+  "notebook_task": {
+    "notebook_path": "/Users/achoppadandi@conversantmedia.com/Notebooks/FirstNotebook"
+  },
+  "email_notifications": {
+    "on_success": [
+      "someone@example.com"
+    ],
+    "on_failure": [
+      "someone@example.com"
+    ]
+  }
+}

@@ -131,22 +131,64 @@ databricks tokens revoke --token-id cfcaf0dc7afb4bbb12ccaf1ff05a20cxxxxxxxxxxxxx
 
 ### Workspace
 
-```
-databricks workspace ls
+#### List files / directories
 
-OR
-
-
-databricks workspace list
-```
+Syntax:
 
 ```
-databricks workspace export <WORKSPACE_SOURCE_PATH_FILE> <LOCAL_TARGET_PATH_FOR_FILE>
+databricks workspace list [Path]
 ```
+
+Example: 
+
+```
+databricks workspace list /
+```
+
+<img src="../Screenshots/Databricks/CLI/workspace/1List.png">
+
+#### Export / get the files from workspace
+
+Syntax:
+
+```
+databricks workspace export <WORKSPACE_SOURCE_PATH_FILE> --file <LOCAL_FILE_NAME> --output <OUTPUT_FORMAT>
+```
+
+Example:
+
+```
+databricks workspace export /Users/ashok@testemail.com/ETL-Pipeline1/1ExtractEmployeesDataFromS3 --file 1ExtractEmployeesDataFromS3.html --format HTML
+```
+
+<img src="../Screenshots/Databricks/CLI/workspace/2ExportFile.png">
+
+#### Export / get the directory from workspace
+
+Syntax:
+
+```
+databricks workspace export-dir <WORKSPACE_SOURCE_PATH_FILE> --file <LOCAL_FILE_NAME> --output <OUTPUT_FORMAT>
+```
+
+Example:
+
+```
+databricks workspace export /Users/ashok@testemail.com/ETL-Pipeline1/1ExtractEmployeesDataFromS3 --file 1ExtractEmployeesDataFromS3.html --format HTML
+```
+
+<img src="../Screenshots/Databricks/CLI/workspace/2ExportFile.png">
+
+#### Import / put files into the workspace
 
 ```
 databricks workspace export_dir <WORKSPACE_SOURCE_PATH_DIRECTORY> <LOCAL_TARGET_PATH_FOR_DIRECTORY>
 ```
+
+```
+databricks workspace import /Users/achoppadandi@conversantmedia.com/Notebooks/FirstNotebook --file Example1Notebook --format SOURCE --language SCALA
+```
+
 
 ```
 databricks workspace import <LOCAL_SOURCE_PATH_FILE> <TARGET_FILE_PATH_ON_WORKSPACE>
