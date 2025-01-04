@@ -30,7 +30,7 @@ awslocal iam create-user --user-name root
 ##### Create *SECRET KEYS* for `ROOT` User
 
 ```
-awslocal iam create-secret-key --user root
+awslocal iam create-access-key --user root
 ```
 
 <img src="../../Screenshots/Localstack/3CreateSecretKeysForRootUser.png">
