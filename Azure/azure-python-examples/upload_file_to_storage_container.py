@@ -26,8 +26,8 @@ def get_blob_service_client():
 
 
 def upload_file():
-    local_file_name = "file1.txt"
-    blob_name = "file1.txt"
+    local_file_name = "file2.txt"
+    blob_name = "file2.txt"
 
     blob_service_client = get_blob_service_client()
     container_client = blob_service_client.get_container_client(container="container20250522")
