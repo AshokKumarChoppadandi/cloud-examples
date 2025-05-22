@@ -1,4 +1,6 @@
 import os
+import sys
+
 from azure.storage.blob import BlobServiceClient
 from azure.core.exceptions import ResourceNotFoundError
 from azure.identity import ClientSecretCredential
@@ -19,17 +21,8 @@ def get_blob_service_client(account_url):
     return blob_service_client
 
 
-def copy_between_storage_accounts():
-    # source_account_url = os.environ.get('SOURCE_STORAGE_URL')
-    # destination_account_url = os.environ.get('DESTINATION_STORAGE_URL')
-
+def copy_between_storage_accounts(source_account_url: str, destination_account_url: str, source_container_name: str, destination_container_name: str):
     global blob_name
-    source_account_url = "storageaccount20250522"
-    destination_account_url = "destaccount20250522"
-
-    source_container_name = "container20250522"
-    destination_container_name = "destcontainer20250522"
-
     source_blob_service_client = get_blob_service_client(source_account_url)
     destination_blob_service_client = get_blob_service_client(destination_account_url)
     print("Source and destination blobs service clients created successfully")
@@ -48,12 +41,14 @@ def copy_between_storage_accounts():
             blob_name = blob.name
             print(f"Blob - {blob_name}")
             source_blob = source_container_client.get_blob_client(blob_name)
-            source_url = source_blob.url
-            print(f"Blob URL - {source_url}")
+            # source_url = source_blob.url
+            # print(f"Blob URL - {source_url}")
             destination_blob = destination_container_client.get_blob_client(blob_name)
             print(f"Copying blob: {blob_name}")
 
-            destination_blob.start_copy_from_url(source_url)
+            # destination_blob.start_copy_from_url(source_url)
+            source_data = source_blob.download_blob()
+            destination_blob.upload_blob(source_data.readall(), overwrite=True)
             print(f"File {blob_name} copied from {source_container_name} to {destination_container_name}")
 
         print("Copy successful")
@@ -62,4 +57,9 @@ def copy_between_storage_accounts():
 
 
 if __name__ == '__main__':
-    copy_between_storage_accounts()
+    src_account_url = sys.argv[1]
+    dest_account_url = sys.argv[2]
+    src_container_name = sys.argv[3]
+    dest_container_name = sys.argv[4]
+
+    copy_between_storage_accounts(src_account_url, dest_account_url, src_container_name, dest_container_name)

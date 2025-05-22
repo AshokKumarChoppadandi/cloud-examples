@@ -1,4 +1,6 @@
 import os
+import sys
+
 from azure.storage.blob import BlobServiceClient, BlobClient
 from azure.identity import ClientSecretCredential
 
@@ -25,12 +27,12 @@ def get_blob_service_client():
     return blob_service_client
 
 
-def upload_file():
-    local_file_name = "file2.txt"
-    blob_name = "file2.txt"
+def upload_file(source_file_path: str, destination_file_name: str, container_name: str):
+    local_file_name = source_file_path
+    blob_name = destination_file_name
 
     blob_service_client = get_blob_service_client()
-    container_client = blob_service_client.get_container_client(container="container20250522")
+    container_client = blob_service_client.get_container_client(container=container_name)
     blob_client = container_client.get_blob_client(blob=blob_name)
 
     with open(local_file_name, "rb") as data:
@@ -40,4 +42,7 @@ def upload_file():
 
 
 if __name__ == '__main__':
-    upload_file()
+    src_file_path = sys.argv[1]
+    dest_file_name = sys.argv[2]
+    storage_container_name = sys.argv[3]
+    upload_file(src_file_path, dest_file_name, storage_container_name)
